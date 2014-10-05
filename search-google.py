@@ -68,7 +68,8 @@ def main():
         page_num = page_num+1 # since it starts at 0
         go_to_page(br, page_num, search_term)
         titles_urls = scrape_results(br)
-        all_results += titles_urls # make 1 list, not list of lists
+        for title in title_urls:
+            all_results.append(title)
 
     for result in all_results:
         title = result[0]
