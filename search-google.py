@@ -18,7 +18,7 @@ from IPython import embed
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', '--search', help='Enter the search term')
-    parser.add_argument('-p', '--pages', help='Enter how many pages to scrape (1 page = 100 results)')
+    parser.add_argument('-p', '--pages', default='1', help='Enter how many pages to scrape (1 page = 100 results)')
     return parser.parse_args()
 
 def start_browser():
@@ -37,7 +37,7 @@ def get_ua():
     return ua
 
 def scrape_results(br):
-    # Xpath will find a subnode of h3, a[@href] specifies that we only want <a> nodes with 
+    # Xpath will find a subnode of h3, a[@href] specifies that we only want <a> nodes with
     # any href attribute that are subnodes of <h3> tags that have a class of 'r'
     links = br.find_elements_by_xpath("//h3[@class='r']/a[@href]")
     results = []
@@ -62,6 +62,8 @@ def go_to_page(br, page_num, search_term):
 def main():
     args = parse_args()
     br = start_browser()
+    if not args.search:
+        sys.exit("[!] Enter a term or phrase to search with the -s option: -s 'dan mcinerney'"
     search_term = args.search
     pages = args.pages
 
