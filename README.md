@@ -1,4 +1,26 @@
 search-google
 =============
 
-Scrape google search results
+Scrape Google search results with Selenium. No obfuscation other than random Firefox user-agents, just a simple scraper that returns however many pages of results you want. 1 page = 100 results. 
+
+Dependencies
+-------
+python 2.7
+Selenium
+
+
+Installation
+-------
+pip install --user selenium
+git clone https://github.com/DanMcInerney/search-google
+cd search-google
+
+
+Usage
+-----
+```python
+python search-google.py -p 3 -s '"Dan McInerney"'
+```
+
+Will open an instance of Firefox and search 3 pages for "Dan McInerney" (quotes included) in Google then print the title and url of each result.
+

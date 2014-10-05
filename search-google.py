@@ -11,8 +11,6 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.common.exceptions import NoSuchFrameException
 from selenium.webdriver.common.keys import Keys
 
-from IPython import embed
-
 # If this script no longer fetches any results check the XPath
 
 def parse_args():
