@@ -47,13 +47,11 @@ def scrape_results(br):
     return results
 
 def go_to_page(br, page_num, search_term):
-    if page_num == 1:
-        start_results = 0
-    else:
-        start_results = page_num * 100
+    page_num = page_num - 1
+    start_results = page_num * 100
     start_results = str(start_results)
     url = 'https://www.google.com/webhp?#num=100&start='+start_results+'&q='+search_term
-    print '[*] Fetching 100 results from page '+str(page_num)+' at '+url
+    print '[*] Fetching 100 results from page '+str(page_num+1)+' at '+url
     br.get(url)
     time.sleep(2)
 
