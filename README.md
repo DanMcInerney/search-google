@@ -24,5 +24,5 @@ Usage
 python search-google.py -p 3 -s '"Dan McInerney"'
 ```
 
-Will open an instance of Firefox and search 3 pages for "Dan McInerney" (quotes included) in Google then print the title and url of each result.
+Will open an instance of Firefox and search 3 pages of 100 results each for "Dan McInerney" (quotes included) in Google then print the title and url of each result.
 
