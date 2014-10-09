@@ -59,7 +59,7 @@ def main():
     args = parse_args()
     br = start_browser()
     if not args.search:
-        sys.exit("[!] Enter a term or phrase to search with the -s option: -s 'dan mcinerney'"
+        sys.exit("[!] Enter a term or phrase to search with the -s option: -s 'dan mcinerney'")
     search_term = args.search
     pages = args.pages
 
@@ -68,7 +68,7 @@ def main():
         page_num = page_num+1 # since it starts at 0
         go_to_page(br, page_num, search_term)
         titles_urls = scrape_results(br)
-        for title in title_urls:
+        for title in titles_urls:
             all_results.append(title)
 
     for result in all_results:
