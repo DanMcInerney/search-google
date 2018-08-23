@@ -75,5 +75,6 @@ def main():
         title = result[0]
         url = result[1]
         print '[+]', title, '--', url
+    br.quit()
 
 main()
