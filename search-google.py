@@ -77,4 +77,5 @@ def main():
         print '[+]', title, '--', url
     br.quit()
 
-main()
+if __name__ == "__main__":
+    main()
